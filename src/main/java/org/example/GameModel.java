@@ -27,6 +27,7 @@ public class GameModel
     void addClient(ClientHandler client)
     {
         this.clientList.add(client);
+        System.out.println("Size: "+ this.clientList.size());
     }
 
     void removeClient(ClientHandler client)
