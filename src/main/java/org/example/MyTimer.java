@@ -1,2 +1,20 @@
-package org.example;public class MyTimer {
+package org.example;
+
+import java.util.Date;
+
+public class MyTimer extends Thread
+{
+    public void run()
+    {
+        while(true){
+            Date d = new Date();
+            System.out.println(d.toString());
+            GameModel.getInstance().sendToAll(d.toString());
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 }
